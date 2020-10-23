@@ -1,0 +1,67 @@
+
+/* styles for polls ad survey */
+
+.pollSurvey .createPoll {
+                width: 275px;
+}
+
+.pollSurvey .createPoll1 {
+                width: 275px;
+                margin: 10px 0 10px 0;
+}
+
+.pollSurvey .createpoll2 {
+                padding: 0;
+}
+
+.pollSurvey .form-control.createPoll2 {
+                width: 100px;
+                margin-right: 7px;
+}
+
+.pollSurvey .col-md-6.polls2 {
+                padding: 0;
+}
+.pollSurvey .padnfour {
+                padding: 15px 15px 0 15px;
+}
+.pollSurvey .padntwo {
+                padding: 15px;
+}
+.pollSurvey .padnthree {
+                padding: 0 0 0 15px;
+}
+.pollSurvey .verticalSpcer{margin-bottom:15px;}
+.pollSurvey .form-control.createPoll2{float:left;}
+.pollSurvey .table-responsive{padding:10px 10px 10px 0; overflow-x: hidden;}
+.pollSurvey .table-responsive table tr td{padding:8px;}
+.pollSurvey .radio input{margin-top:0px;}
+.pollSurvey .control-label::after{margin-left:-1px; top:2px; position:static;}
+/* .container{width:930px !important;}
+.pollSurvey .selected img{border:0 !important;} */
+
+.container.pollSurvey {width: 940px !important;}
+.pollList {border-collapse:collapse;}
+.pollSurvey label.error{font-weight: normal;color:red;float:left;}
+.pollSurvey .topSpc{padding-top:20px;}
+.pollSurvey .add-on {float: left;position: absolute;top: 10px;}
+.pollSurvey .modalIcon {padding: 8px;}
+.pollSurvey .modal-body { padding: 20px;}
+.pollSurvey .dataTable th {font-size: 11px;}
+
+.pollResult .poll-progress-color-1 {background-color: #5cb85c;}
+.pollResult .poll-progress-color-2 {background-color: #B85CB7;}
+.pollResult .poll-progress-color-3 {background-color: #815CB8;}
+.pollResult .poll-progress-color-4 {background-color: #5C84B8;}
+.pollResult .poll-progress-color-5 {background-color: #73C9E3;}
+.pollResult .poll-progress-color-6 {background-color: #28BACD;}
+.pollResult .poll-progress-color-7 {background-color: #32D0C4;}
+.pollResult .poll-progress-color-8 {background-color: #6F7127;}
+.pollResult .poll-progress-color-9 {background-color: #712732;}
+.pollResult .poll-progress-color-10 {background-color: #A7BBBD;}
+
+#pollModal .progress-bar{min-width:2em;}
+#pollModal .progress{height:26px; box-shadow:0 1px 2px rgba(0, 0, 0, 0.1) inset;}
+#pollModal .progress-percent{padding:5px 0;}
+
+.pollsurvey img, #pollModal img {border: medium none !important;opacity: 1 !important;}
