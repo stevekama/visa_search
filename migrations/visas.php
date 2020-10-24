@@ -27,7 +27,9 @@ class Visa_migration{
         $query .= "visa_type VARCHAR(200) NOT NULL, ";
         $query .= "purpose_for_visa VARCHAR(200) NOT NULL, ";
         $query .= "duration_residence VARCHAR(200) NOT NULL, ";
-        $query .= "passport_number VARCHAR(200) NOT NULL";
+        $query .= "passport_number VARCHAR(200) NOT NULL, ";
+        $query .= "travel_index VARCHAR(200) NOT NULL, ";
+        $query .= "visa_status VARCHAR(200) NOT NULL";
         $query .= ")";
 
         // execute query 

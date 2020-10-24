@@ -21,7 +21,7 @@ class Visa_owner_migration{
         $query .= "id INT(11) UNSIGNED  NOT NULL PRIMARY KEY AUTO_INCREMENT, ";
         $query .= "fullnames VARCHAR(200) NOT NULL, ";
         $query .= "phone VARCHAR(200) NOT NULL, ";
-        $query .= "descriotion TEXT NOT NULL, ";
+        $query .= "description TEXT NOT NULL, ";
         $query .= "nationality VARCHAR(200) NOT NULL, ";
         $query .= "gender DATE NOT NULL, ";
         $query .= "date_birth VARCHAR(200) NOT NULL, ";

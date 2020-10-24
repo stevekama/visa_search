@@ -2,15 +2,15 @@
 class Database
 {
 
-    // private $host = 'ao9moanwus0rjiex.cbetxkdyhwsb.us-east-1.rds.amazonaws.com';
-    // private $username = 'kg510ppi3jmrlcn9';
-    // private $password = 'bemdfd7sue9ixyvy';
-    // private $dbname = 'tdviu77961bgomk7';
+    private $host = 'klbcedmmqp7w17ik.cbetxkdyhwsb.us-east-1.rds.amazonaws.com';
+    private $username = 'axy0h47ia71vuini';
+    private $password = 'my7mpqmd843r1h0f';
+    private $dbname = 'em3yymfvbqvsc8ez';
 
-    private $host = 'localhost';
-    private $username = 'root';
-    private $password = '';
-    private $dbname = 'visa_search';
+    // private $host = 'localhost';
+    // private $username = 'root';
+    // private $password = '';
+    // private $dbname = 'visa_search';
 
     private $conn;
 
