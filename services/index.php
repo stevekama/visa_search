@@ -751,12 +751,6 @@
                                                     </ul>
                                                 </div>
 
-
-
-
-
-
-
                                                 <script type="text/javascript">
                                                     $(document).ready(function() {
                                                         $('#servicesearch').keyup(function() {
@@ -802,6 +796,7 @@
                                                         });
                                                     });
                                                 </script>
+
                                                 <style>
                                                     @media (max-width: 768px) {
                                                         .menutoggle {
@@ -846,9 +841,6 @@
 
                                             <div class="asa.portlet" id="asa.portlet.Z7_N90A19O0KG80B0A1F3NMPT10T7" style="display:none;">
                                                 <span class="asa.portlet.id">Z7_N90A19O0KG80B0A1F3NMPT10T7</span>
-
-
-
                                             </div>
 
                                             <!-- asa.overlay marks the node that the AsaOverlayWidget will be placed in -->
@@ -863,14 +855,6 @@
                                                 <!-- lm:control dynamic spot injects markup of layout control -->
 
 
-
-
-
-
-
-
-
-
                                                 <style>
                                                     button:disabled,
                                                     button[disabled] {
@@ -880,18 +864,9 @@
                                                     }
                                                 </style>
 
-
-
-
-
-
-
                                                 <link rel=stylesheet type=text/css href="/.moi_portal_utility/enquiry_services/css/services.css">
 
                                                 <link rel=stylesheet type=text/css href="/.moi_portal_utility/enquiry_services/css/en-services.css">
-
-
-
 
                                                 <script>
                                                     $(document).ready(function() {
@@ -1822,6 +1797,11 @@
                                                             if(visa_number != "" && passport_number == ""){
                                                                 find_by_visa_number(visa_number, nationality);
                                                             }
+
+                                                            if(passport_number != "" && visa_number == ""){
+                                                                find_by_passport_number(passport_number, nationality);
+                                                            }
+
                                                         });
                                                     });
 
@@ -1831,6 +1811,75 @@
                                                             url: "<?php echo base_url(); ?>api/visa/visa.php",
                                                             type: "POST",
                                                             data: {action:action, visa_number:visa_number, nationality:nationality},
+                                                            dataType: "json",
+                                                            success: function(data) {
+                                                                $('#myModalns_Z7_N90A19O0KG80B0A1F3NMPT10T7_').modal('show');
+                                                                if(data.message == "errorVisa"){
+                                                                    $('#searchResultns_Z7_N90A19O0KG80B0A1F3NMPT10T7_').html('<div class="alert alert-danger">Sorry, Requested Visa Not Found..... Please try again</div>');
+                                                                    return false;
+                                                                }else{
+                                                                    let loadHtml = '<table class="table table-striped">';
+                                                                    loadHtml += '<tr>';
+                                                                    loadHtml += '<th>Visa Number</th>';
+                                                                    loadHtml += '<td>'+data.visa_number+'</td>';
+                                                                    loadHtml += '</tr>';
+                                                                    loadHtml += '<tr>';
+                                                                    loadHtml += '<th>Name</th>';
+                                                                    loadHtml += '<td>'+data.fullnames+'</td>';
+                                                                    loadHtml += '</tr>';
+                                                                    loadHtml += '<tr>';
+                                                                    loadHtml += '<th>Nationality</th>';
+                                                                    loadHtml += '<td>'+data.nationality+'</td>';
+                                                                    loadHtml += '</tr>';
+                                                                    loadHtml += '<tr>';
+                                                                    loadHtml += '<th>Passport Number</th>';
+                                                                    loadHtml += '<td>'+data.passport_number+'</td>';
+                                                                    loadHtml += '</tr>';
+                                                                    loadHtml += '<tr>';
+                                                                    loadHtml += '<th>Description Of Visa Owner</th>';
+                                                                    loadHtml += '<td>'+data.description+'</td>';
+                                                                    loadHtml += '</tr>';
+                                                                    loadHtml += '<tr>';
+                                                                    loadHtml += '<th>Gender</th>';
+                                                                    loadHtml += '<td>'+data.gender+'</td>';
+                                                                    loadHtml += '</tr>';
+                                                                    loadHtml += '<tr>';
+                                                                    loadHtml += '<th>Visa Type</th>';
+                                                                    loadHtml += '<td>'+data.visa_type+'</td>';
+                                                                    loadHtml += '</tr>';
+                                                                    loadHtml += '<tr>';
+                                                                    loadHtml += '<th>Travel Index</th>';
+                                                                    loadHtml += '<td>'+data.travel_index+'</td>';
+                                                                    loadHtml += '</tr>';
+                                                                    loadHtml += '<tr>';
+                                                                    loadHtml += '<th>Stay Duration</th>';
+                                                                    loadHtml += '<td>'+data.duration_residence+'</td>';
+                                                                    loadHtml += '</tr>';
+                                                                    loadHtml += '<tr>';
+                                                                    loadHtml += '<th>Date of Issue</th>';
+                                                                    loadHtml += '<td>'+data.date_issue+'</td>';
+                                                                    loadHtml += '</tr>';
+                                                                    loadHtml += '<tr>';
+                                                                    loadHtml += '<th>Visa Validity</th>';
+                                                                    loadHtml += '<td>'+data.visa_validity+'</td>';
+                                                                    loadHtml += '</tr>';
+                                                                    loadHtml += '<tr>';
+                                                                    loadHtml += '<th>Visa Status</th>';
+                                                                    loadHtml += '<td>'+data.visa_status+'</td>';
+                                                                    loadHtml += '</tr>';
+                                                                    loadHtml += '</table>';
+                                                                    $('#searchResultns_Z7_N90A19O0KG80B0A1F3NMPT10T7_').html(loadHtml);
+                                                                }
+                                                            }
+                                                        });
+                                                    }
+
+                                                    function find_by_passport_number(passport_number, nationality) {
+                                                        var action = "FETCH_VISA_BY_PASSPORT";
+                                                        $.ajax({
+                                                            url: "<?php echo base_url(); ?>api/visa/visa.php",
+                                                            type: "POST",
+                                                            data: {action:action, passport_number:passport_number, nationality:nationality},
                                                             dataType: "json",
                                                             success: function(data) {
                                                                 $('#myModalns_Z7_N90A19O0KG80B0A1F3NMPT10T7_').modal('show');
