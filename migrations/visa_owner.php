@@ -23,7 +23,7 @@ class Visa_owner_migration{
         $query .= "phone VARCHAR(200) NOT NULL, ";
         $query .= "description TEXT NOT NULL, ";
         $query .= "nationality VARCHAR(200) NOT NULL, ";
-        $query .= "gender DATE NOT NULL, ";
+        $query .= "gender VARCHAR(200) NOT NULL, ";
         $query .= "date_birth VARCHAR(200) NOT NULL, ";
         $query .= "proffession TEXT NOT NULL, ";
         $query .= "sponsor_name VARCHAR(200) NOT NULL";
