@@ -1028,13 +1028,8 @@
                                     <div class='component-control id-Z7_N90A19O0KG80B0A1F3NMPT10T2'><span id="Z7_N90A19O0KG80B0A1F3NMPT10T2"></span>
                                         <section class="ibmPortalControl wpthemeNoSkin a11yRegionTarget" role="region">
                                             <!-- marks the node the analytics tags for this portlet will be placed in -->
-
-
                                             <div class="asa.portlet" id="asa.portlet.Z7_N90A19O0KG80B0A1F3NMPT10T2" style="display:none;">
                                                 <span class="asa.portlet.id">Z7_N90A19O0KG80B0A1F3NMPT10T2</span>
-
-
-
                                             </div>
 
                                             <!-- asa.overlay marks the node that the AsaOverlayWidget will be placed in -->
@@ -1047,7 +1042,6 @@
                                             </span>
                                             <div class="wpthemeOverflowAuto">
                                                 <!-- lm:control dynamic spot injects markup of layout control -->
-
                                                 <style>
                                                     .serviceImage img {
                                                         width: 42px;
@@ -1077,8 +1071,6 @@
                                                                 <span>Visa Services</span>
                                                             </a>
                                                         </li>
-
-
 
                                                         <li>
                                                             <a title="Exit &amp; Entry Permits" class="serviceImage" href="/wps/portal/MOIInternet/services/inquiries/exitservices">
@@ -1177,6 +1169,7 @@
                                                         });
                                                     });
                                                 </script>
+
                                                 <style>
                                                     @media (max-width: 768px) {
                                                         .menutoggle {
@@ -1212,6 +1205,7 @@
                                     </div>
                                 </div>
                             </div>
+
                             <div class="mainpanel column1">
                                 <div class='component-container wpthemeCol wpthemeLeft wpthemeNarrow wpthemeCol4of12 ibmDndColumn wpthemePrimaryContainer id-Z7_N90A19O0KG80B0A1F3NMPT10T6' name='left'>
                                     <div class='component-control id-Z7_N90A19O0KG80B0A1F3NMPT10T7'><span id="Z7_N90A19O0KG80B0A1F3NMPT10T7"></span>
@@ -1271,6 +1265,7 @@
                                                         });
                                                     });
                                                 </script>
+
                                                 <div class="tab-pane active eservices" id="servicesPanens_Z7_N90A19O0KG80B0A1F3NMPT10T7_">
                                                     <div class="contentpanelForm text-left">
                                                         <div class="panel panel-primary" style="margin: auto;">
@@ -2104,30 +2099,6 @@
                                                                             </select>
                                                                         </div>
                                                                     </div>
-
-                                                                    <div class="row">
-                                                                        <label class="col-xs-12 " for="captchaResponsens_Z7_N90A19O0KG80B0A1F3NMPT10T7_">Please enter the verification code from the picture or audio</label>
-                                                                    </div>
-                                                                    <div class="row" style="padding-bottom: 15px; padding-top: 15px;">
-                                                                        <div class="col-xs-12  col-sm-5">
-                                                                            <div id="captcha-wrap">
-                                                                                <div id="captcha-box"></div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-xs-12 col-sm-7" style="padding: 5px 0px;">
-                                                                            <div class="col-xs-12 col-sm-4 padnone">
-                                                                                <input type="text" size="3" maxlength="3" autocomplete="off" name="captchaResponse" id="captchaResponsens_Z7_N90A19O0KG80B0A1F3NMPT10T7_" class="form-control input-xs text-center enText numeric margin00" style="width: 115px;" />
-                                                                            </div>
-                                                                            <div class="col-xs-12 col-sm-5 padnone">
-                                                                                <a href="javascript:void(0)" id="refreshLink" onclick="refreshCapthcans_Z7_N90A19O0KG80B0A1F3NMPT10T7_();" style="margin-left :10px; margin-right : 10px;">
-                                                                                    <img src='<?php echo public_url(); ?>storage/images/refresh.png' title="Refresh captcha" id="captcha-refresh" alt="Refresh captcha" style="height: 24px;" />
-                                                                                </a>
-                                                                                <a href="javascript:void(0)" id="textAudioLink" onclick='toggleAudioCaptcha($("#text-audio-refresh"))'>
-                                                                                    <img src='<?php echo public_url(); ?>storage/images/audio.png' title="Switch to audio" class="audio" id="text-audio-refresh" alt="Switch to audio" style="height: 24px;" />
-                                                                                </a>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
                                                                 </div>
                                                                 <div class="panel-footer">
                                                                     <div class="row">
@@ -2137,12 +2108,9 @@
                                                                         </div>
                                                                         <div class="col-xs-12 col-sm-6 col-md-6  ptl  ">
                                                                             <input type="button" class="button btnPadExt btn-block btn-md" onclick="javascript:ResetInputFormVisaEnquiryns_Z7_N90A19O0KG80B0A1F3NMPT10T7_();" value="Reset">
-
                                                                         </div>
                                                                     </div>
                                                                 </div>
-
-
                                                             </form>
                                                         </div>
                                                     </div>
@@ -2185,18 +2153,6 @@
 
 
                                                     });
-
-                                                    /* $(document).ready(function(){
-   
-    $('#frmns_Z7_N90A19O0KG80B0A1F3NMPT10T7_ input,select').keydown(function(e) {
-	    if (e.keyCode == 13) {
-	    	e.preventDefault();
-	       	formSubmitAjaxns_Z7_N90A19O0KG80B0A1F3NMPT10T7_();
-	    } 
-	});
-	
-	
-}); */
 
                                                     $(document).ready(function() {
                                                         $("#vsaEnqBtn").click(function(e) {
