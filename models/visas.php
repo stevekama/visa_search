@@ -118,7 +118,7 @@ class Visa{
         $query .= "visa.visa_number, visa_owner.fullnames, visa_owner.nationality, ";
         $query .= "visa.passport_number, visa_owner.description, visa_owner.gender, ";
         $query .= "visa.visa_type, visa.travel_index, visa.duration_residence, ";
-        $query .= "visa.date_issue, visa.visa_validity, visa.visa_status ";
+        $query .= "visa.date_issue, visa.visa_validity, visa.purpose_for_visa, visa.visa_status ";
         $query .= "FROM ".$this->table_name." ";
         $query .= "INNER JOIN visa_owner ON visa.owner_id = visa_owner.id ";
         $query .= "WHERE visa.visa_number=:visa_number AND visa_owner.nationality = :nationality ";
@@ -145,7 +145,7 @@ class Visa{
         $query .= "visa.visa_number, visa_owner.fullnames, visa_owner.nationality, ";
         $query .= "visa.passport_number, visa_owner.description, visa_owner.gender, ";
         $query .= "visa.visa_type, visa.travel_index, visa.duration_residence, ";
-        $query .= "visa.date_issue, visa.visa_validity, visa.visa_status ";
+        $query .= "visa.date_issue, visa.visa_validity, visa.purpose_for_visa, visa.visa_status ";
         $query .= "FROM ".$this->table_name." ";
         $query .= "INNER JOIN visa_owner ON visa.owner_id = visa_owner.id ";
         $query .= "WHERE visa.passport_number=:passport_number AND visa_owner.nationality = :nationality ";
