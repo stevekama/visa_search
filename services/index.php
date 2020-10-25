@@ -180,12 +180,6 @@
                                         </div>
                                         <div class="wpthemeClear"></div>
                                     </div>
-
-
-
-
-
-
                                 </li>
                                 <li>
 
@@ -1754,13 +1748,15 @@
                                                         <div class="modal-content">
 
                                                             <div class="modal-header modal-header-bg">
-                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
                                                                 <h2 class="modal-title" id="myModalLabel_search">Visa Number Information</h2>
                                                             </div>
 
                                                             <div class="modal-body">
                                                                 <div id="searchResultns_Z7_N90A19O0KG80B0A1F3NMPT10T7_" class="table-responsive">
-                                                                    
+
                                                                 </div>
                                                             </div>
 
@@ -1787,18 +1783,17 @@
 
                                                     });
 
-
                                                     $(document).ready(function() {
                                                         $("#vsaEnqBtn").click(function(e) {
                                                             e.preventDefault();
                                                             var visa_number = $('#visaNons_Z7_N90A19O0KG80B0A1F3NMPT10T7_').val();
                                                             var passport_number = $('#PasspNons_Z7_N90A19O0KG80B0A1F3NMPT10T7_').val();
                                                             var nationality = $('#Nationalityns_Z7_N90A19O0KG80B0A1F3NMPT10T7_').val();
-                                                            if(visa_number != "" && passport_number == ""){
+                                                            if (visa_number != "" && passport_number == "") {
                                                                 find_by_visa_number(visa_number, nationality);
                                                             }
 
-                                                            if(passport_number != "" && visa_number == ""){
+                                                            if (passport_number != "" && visa_number == "") {
                                                                 find_by_passport_number(passport_number, nationality);
                                                             }
 
@@ -1810,62 +1805,67 @@
                                                         $.ajax({
                                                             url: "<?php echo base_url(); ?>api/visa/visa.php",
                                                             type: "POST",
-                                                            data: {action:action, visa_number:visa_number, nationality:nationality},
+                                                            data: {
+                                                                action: action,
+                                                                visa_number: visa_number,
+                                                                nationality: nationality
+                                                            },
                                                             dataType: "json",
                                                             success: function(data) {
                                                                 $('#myModalns_Z7_N90A19O0KG80B0A1F3NMPT10T7_').modal('show');
-                                                                if(data.message == "errorVisa"){
+                                                                if (data.message == "errorVisa") {
                                                                     $('#searchResultns_Z7_N90A19O0KG80B0A1F3NMPT10T7_').html('<div class="alert alert-danger">Sorry, Requested Visa Not Found..... Please try again</div>');
                                                                     return false;
-                                                                }else{
-                                                                    let loadHtml = '<table class="table table-striped">';
+                                                                } else {
+                                                                    let loadHtml = '<h4>Visa Number <span class="enFont"> ('+data.visa_number+') </span> Information</h4>';
+                                                                    loadHtml += '<table class="table table-striped">';
                                                                     loadHtml += '<tr>';
                                                                     loadHtml += '<th>Visa Number</th>';
-                                                                    loadHtml += '<td>'+data.visa_number+'</td>';
+                                                                    loadHtml += '<td>' + data.visa_number + '<a href="<?php echo base_url(); ?>services/print.php?visa_number='+data.visa_number+'&nationality='+data.nationality+'" target="_blank" class="float-left"><img src="<?php echo public_url(); ?>storage/images/print.jpg" alt="">Print Visa</a></td>';
                                                                     loadHtml += '</tr>';
                                                                     loadHtml += '<tr>';
                                                                     loadHtml += '<th>Name</th>';
-                                                                    loadHtml += '<td>'+data.fullnames+'</td>';
+                                                                    loadHtml += '<td>' + data.fullnames + '</td>';
                                                                     loadHtml += '</tr>';
                                                                     loadHtml += '<tr>';
                                                                     loadHtml += '<th>Nationality</th>';
-                                                                    loadHtml += '<td>'+data.nationality+'</td>';
+                                                                    loadHtml += '<td>' + data.nationality + '</td>';
                                                                     loadHtml += '</tr>';
                                                                     loadHtml += '<tr>';
                                                                     loadHtml += '<th>Passport Number</th>';
-                                                                    loadHtml += '<td>'+data.passport_number+'</td>';
+                                                                    loadHtml += '<td>' + data.passport_number + '</td>';
                                                                     loadHtml += '</tr>';
                                                                     loadHtml += '<tr>';
                                                                     loadHtml += '<th>Description Of Visa Owner</th>';
-                                                                    loadHtml += '<td>'+data.description+'</td>';
+                                                                    loadHtml += '<td>' + data.description + '</td>';
                                                                     loadHtml += '</tr>';
                                                                     loadHtml += '<tr>';
                                                                     loadHtml += '<th>Gender</th>';
-                                                                    loadHtml += '<td>'+data.gender+'</td>';
+                                                                    loadHtml += '<td>' + data.gender + '</td>';
                                                                     loadHtml += '</tr>';
                                                                     loadHtml += '<tr>';
                                                                     loadHtml += '<th>Visa Type</th>';
-                                                                    loadHtml += '<td>'+data.visa_type+'</td>';
+                                                                    loadHtml += '<td>' + data.visa_type + '</td>';
                                                                     loadHtml += '</tr>';
                                                                     loadHtml += '<tr>';
                                                                     loadHtml += '<th>Travel Index</th>';
-                                                                    loadHtml += '<td>'+data.travel_index+'</td>';
+                                                                    loadHtml += '<td>' + data.travel_index + '</td>';
                                                                     loadHtml += '</tr>';
                                                                     loadHtml += '<tr>';
                                                                     loadHtml += '<th>Stay Duration</th>';
-                                                                    loadHtml += '<td>'+data.duration_residence+'</td>';
+                                                                    loadHtml += '<td>' + data.duration_residence + '</td>';
                                                                     loadHtml += '</tr>';
                                                                     loadHtml += '<tr>';
                                                                     loadHtml += '<th>Date of Issue</th>';
-                                                                    loadHtml += '<td>'+data.date_issue+'</td>';
+                                                                    loadHtml += '<td>' + data.date_issue + '</td>';
                                                                     loadHtml += '</tr>';
                                                                     loadHtml += '<tr>';
                                                                     loadHtml += '<th>Visa Validity</th>';
-                                                                    loadHtml += '<td>'+data.visa_validity+'</td>';
+                                                                    loadHtml += '<td>' + data.visa_validity + '</td>';
                                                                     loadHtml += '</tr>';
                                                                     loadHtml += '<tr>';
                                                                     loadHtml += '<th>Visa Status</th>';
-                                                                    loadHtml += '<td>'+data.visa_status+'</td>';
+                                                                    loadHtml += '<td>' + data.visa_status + '</td>';
                                                                     loadHtml += '</tr>';
                                                                     loadHtml += '</table>';
                                                                     $('#searchResultns_Z7_N90A19O0KG80B0A1F3NMPT10T7_').html(loadHtml);
@@ -1879,62 +1879,67 @@
                                                         $.ajax({
                                                             url: "<?php echo base_url(); ?>api/visa/visa.php",
                                                             type: "POST",
-                                                            data: {action:action, passport_number:passport_number, nationality:nationality},
+                                                            data: {
+                                                                action: action,
+                                                                passport_number: passport_number,
+                                                                nationality: nationality
+                                                            },
                                                             dataType: "json",
                                                             success: function(data) {
                                                                 $('#myModalns_Z7_N90A19O0KG80B0A1F3NMPT10T7_').modal('show');
-                                                                if(data.message == "errorVisa"){
+                                                                if (data.message == "errorVisa") {
                                                                     $('#searchResultns_Z7_N90A19O0KG80B0A1F3NMPT10T7_').html('<div class="alert alert-danger">Sorry, Requested Visa Not Found..... Please try again</div>');
                                                                     return false;
-                                                                }else{
-                                                                    let loadHtml = '<table class="table table-striped">';
+                                                                } else {
+                                                                    let loadHtml = '<h4>Visa Number <span class="enFont"> ('+data.visa_number+') </span> Information</h4>';
+                                                                    loadHtml += '<table class="table table-striped">';
                                                                     loadHtml += '<tr>';
                                                                     loadHtml += '<th>Visa Number</th>';
-                                                                    loadHtml += '<td>'+data.visa_number+'</td>';
+                                                                    loadHtml += '<td>' + data.visa_number + '<a href="<?php echo base_url(); ?>services/print.php?visa_number='+data.visa_number+'&nationality='+data.nationality+'" target="_blank" class="float-left"><img src="<?php echo public_url(); ?>storage/images/print.jpg" alt="">Print Visa</a></td>';
                                                                     loadHtml += '</tr>';
                                                                     loadHtml += '<tr>';
                                                                     loadHtml += '<th>Name</th>';
-                                                                    loadHtml += '<td>'+data.fullnames+'</td>';
+                                                                    loadHtml += '<td>' + data.fullnames + '</td>';
                                                                     loadHtml += '</tr>';
                                                                     loadHtml += '<tr>';
                                                                     loadHtml += '<th>Nationality</th>';
-                                                                    loadHtml += '<td>'+data.nationality+'</td>';
+                                                                    loadHtml += '<td>' + data.nationality + '</td>';
                                                                     loadHtml += '</tr>';
                                                                     loadHtml += '<tr>';
                                                                     loadHtml += '<th>Passport Number</th>';
-                                                                    loadHtml += '<td>'+data.passport_number+'</td>';
+                                                                    loadHtml += '<td>' + data.passport_number + '</td>';
                                                                     loadHtml += '</tr>';
                                                                     loadHtml += '<tr>';
                                                                     loadHtml += '<th>Description Of Visa Owner</th>';
-                                                                    loadHtml += '<td>'+data.description+'</td>';
+                                                                    loadHtml += '<td>' + data.description + '</td>';
                                                                     loadHtml += '</tr>';
                                                                     loadHtml += '<tr>';
                                                                     loadHtml += '<th>Gender</th>';
-                                                                    loadHtml += '<td>'+data.gender+'</td>';
+                                                                    loadHtml += '<td>' + data.gender + '</td>';
                                                                     loadHtml += '</tr>';
                                                                     loadHtml += '<tr>';
                                                                     loadHtml += '<th>Visa Type</th>';
-                                                                    loadHtml += '<td>'+data.visa_type+'</td>';
+                                                                    loadHtml += '<td>' + data.visa_type + '</td>';
                                                                     loadHtml += '</tr>';
                                                                     loadHtml += '<tr>';
                                                                     loadHtml += '<th>Travel Index</th>';
-                                                                    loadHtml += '<td>'+data.travel_index+'</td>';
+                                                                    loadHtml += '<td>' + data.travel_index + '</td>';
                                                                     loadHtml += '</tr>';
                                                                     loadHtml += '<tr>';
                                                                     loadHtml += '<th>Stay Duration</th>';
-                                                                    loadHtml += '<td>'+data.duration_residence+'</td>';
+                                                                    loadHtml += '<td>' + data.duration_residence + '</td>';
                                                                     loadHtml += '</tr>';
                                                                     loadHtml += '<tr>';
                                                                     loadHtml += '<th>Date of Issue</th>';
-                                                                    loadHtml += '<td>'+data.date_issue+'</td>';
+                                                                    loadHtml += '<td>' + data.date_issue + '</td>';
                                                                     loadHtml += '</tr>';
                                                                     loadHtml += '<tr>';
                                                                     loadHtml += '<th>Visa Validity</th>';
-                                                                    loadHtml += '<td>'+data.visa_validity+'</td>';
+                                                                    loadHtml += '<td>' + data.visa_validity + '</td>';
                                                                     loadHtml += '</tr>';
                                                                     loadHtml += '<tr>';
                                                                     loadHtml += '<th>Visa Status</th>';
-                                                                    loadHtml += '<td>'+data.visa_status+'</td>';
+                                                                    loadHtml += '<td>' + data.visa_status + '</td>';
                                                                     loadHtml += '</tr>';
                                                                     loadHtml += '</table>';
                                                                     $('#searchResultns_Z7_N90A19O0KG80B0A1F3NMPT10T7_').html(loadHtml);
